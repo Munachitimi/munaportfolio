@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 97.3%;
+    --foreground: 220 13% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 13%;
+
+    /* Dark blue-gray primary for header/footer */
+    --primary: 235 21% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light background for sections */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 235 21% 21%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 235 21% 21%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 235 21% 21%;
+
+    --radius: 0.5rem;
+
+    /* Coral/Pink gradient colors */
+    --gradient-coral-1: 6 100% 80%;
+    --gradient-coral-2: 351 100% 71%;
+    --gradient-coral-3: 348 100% 80%;
+
+    /* Hero dark gradient */
+    --hero-dark-1: 235 21% 21%;
+    --hero-dark-2: 0 0% 7%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(90deg, hsl(var(--gradient-coral-1)), hsl(var(--gradient-coral-2)), hsl(var(--gradient-coral-3)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(90deg, hsl(var(--gradient-coral-1)), hsl(var(--gradient-coral-2)), hsl(var(--gradient-coral-3)));
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--hero-dark-1)), hsl(var(--hero-dark-2)));
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 1s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 1s ease-out 0.3s both;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+}
