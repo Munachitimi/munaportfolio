@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import coffeeImage from "@/assets/coffee.png";
+import UrbanImage from "@/assets/UrbanImage.png";
 import fashionImage from "@/assets/fashion.png";
 import cryptoImage from "@/assets/crypto.png";
 import cusiaImage from "@/assets/cusia.png";
@@ -19,11 +19,11 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Coffee Haus",
-    category: "Web Design / Frontend Development",
-    description: "A premium coffee shop website with an artisanal feel, focusing on specialty brews and the coffee experience. Features online ordering and a coffee subscription service.",
-    link: "https://coffehaus.netlify.app/",
-    image: coffeeImage,
+    title: "Urban",
+    category: "React.js / Frontend Development / Web Development",
+    description: "A modern real estate website built with React, designed to showcase properties for sale and rent in a sleek, minimalist interface. Featuring elegant typography, a refined green-and-charcoal color palette, and smooth page transitions for a premium browsing experience.",
+    link: "https://munaurban.netlify.app/",
+    image: UrbanImage,
   },
   {
     title: "Fashion Brand",
