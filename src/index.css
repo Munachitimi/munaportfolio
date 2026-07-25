@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   DESIGN SYSTEM — "CONTACT SHEET"
+   A darkroom / contact-sheet visual language: every section of
+   the page is treated as a frame on a roll of film. Corner
+   registration marks, exposure numbers and a single safelight-red
+   accent carry the identity. All colors are HSL.
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Paper — cool, slightly blue-gray white (darkroom fiber paper, not cream) */
+    --background: 200 16% 96%;
+    --foreground: 220 12% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 12% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 12% 9%;
+
+    /* Ink — near-black used for type and dark UI surfaces */
+    --primary: 220 12% 9%;
+    --primary-foreground: 200 16% 96%;
+
+    --secondary: 200 12% 90%;
+    --secondary-foreground: 220 12% 9%;
+
+    --muted: 200 12% 91%;
+    --muted-foreground: 68 10% 33%;
+
+    --accent: 200 12% 90%;
+    --accent-foreground: 220 12% 9%;
+
+    --destructive: 9 78% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 10% 82%;
+    --input: 200 10% 82%;
+    --ring: 220 12% 9%;
+
+    --radius: 0.25rem;
+
+    /* Signature accent — darkroom safelight red, used sparingly */
+    --signal: 9 78% 50%;
+    --signal-foreground: 0 0% 100%;
+
+    /* Olive — muted secondary ink for captions/specs */
+    --olive: 68 10% 33%;
+
+    /* Film black — deep section background, distinct from --foreground */
+    --film: 220 14% 6%;
+    --film-foreground: 200 16% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Frame — the base "photo frame" surface used across hero + cards */
+  .frame {
+    position: relative;
+    border: 1px solid hsl(var(--border));
+  }
+
+  /* Registration corner brackets — the signature motif */
+  .frame-corners::before,
+  .frame-corners::after,
+  .frame-corners > .fc-tr,
+  .frame-corners > .fc-bl {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+  }
+  .frame-corners::before {
+    left: -1px;
+    top: -1px;
+    border-left: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+  }
+  .frame-corners::after {
+    right: -1px;
+    bottom: -1px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  .sprocket-row {
+    background-image: repeating-linear-gradient(
+      to right,
+      hsl(var(--border)) 0,
+      hsl(var(--border)) 2px,
+      transparent 2px,
+      transparent 14px
+    );
+    background-size: 14px 2px;
+    background-repeat: repeat-x;
+    background-position: left center;
+    height: 2px;
+  }
+
+  /* Photographic vignette — monochrome edge darkening, not a color gradient */
+  .vignette {
+    position: relative;
+  }
+  .vignette::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 120% at 50% 40%, transparent 55%, hsl(var(--film) / 0.55) 100%);
+    pointer-events: none;
+  }
+
+  .text-signal {
+    color: hsl(var(--signal));
+  }
+  .bg-signal {
+    background-color: hsl(var(--signal));
+  }
+  .bg-film {
+    background-color: hsl(var(--film));
+  }
+  .text-film-foreground {
+    color: hsl(var(--film-foreground));
+  }
+  .text-olive {
+    color: hsl(var(--olive));
+  }
+  .border-hairline {
+    border-color: hsl(var(--border));
+  }
+
+  /* Marquee ticker */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.9s ease-out both;
+  }
+}
