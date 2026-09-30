@@ -7,26 +7,42 @@ const Header = () => {
   };
 
   const socialLinks = [
-    { icon: Instagram, href: "https://www.instagram.com/unknownpixels.self/", label: "Instagram" },
-    { icon: Github, href: "https://github.com/Munachitimi", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/munachiso-uche-b93b97366", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:workwithmuna@gmail.com", label: "Email" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/unknownpixels.self/",
+      label: "Instagram",
+    },
+    {
+      icon: Github,
+      href: "https://github.com/Munachitimi",
+      label: "GitHub",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/munachiso-uche-b93b97366",
+      label: "LinkedIn",
+    },
+    {
+      icon: Mail,
+      href: "mailto:workwithmuna@gmail.com",
+      label: "Email",
+    },
   ];
 
   const specs = [
-    { value: "10+", label: "Personal Projects" },
-    { value: "5+", label: "Creative Works" },
-    { value: "2+", label: "Years Experience" },
+    { value: "10+", label: "Projects Built" },
+    { value: "Web +", label: "Mobile" },
+    { value: "CS", label: "Graduate" },
   ];
 
   return (
     <header className="min-h-screen flex flex-col justify-center px-4 sm:px-8 bg-background text-foreground relative py-20">
       <div className="max-w-7xl mx-auto w-full">
-        {/* Top strip */}
         <div className="flex items-center justify-between mb-12 sm:mb-16 animate-fade-in">
           <span className="font-mono text-[11px] sm:text-xs tracking-widest text-olive uppercase">
-            Portfolio — Roll No. 001
+            Munachi · Portfolio
           </span>
+
           <div className="flex gap-2">
             {socialLinks.map((social, index) => (
               <a
@@ -42,10 +58,9 @@ const Header = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
-          {/* Text content */}
           <div className="flex flex-col text-left order-2 lg:order-1 animate-fade-in-up">
             <span className="font-mono text-xs tracking-widest text-signal uppercase mb-3">
-              N&deg; 01 — Now Developing
+              Computer Science · Software Development
             </span>
 
             <h1 className="font-display uppercase text-4xl sm:text-6xl lg:text-7xl leading-[0.95] mb-6 text-foreground">
@@ -55,25 +70,30 @@ const Header = () => {
             </h1>
 
             <p className="font-mono text-xs sm:text-sm mb-6 uppercase tracking-widest text-olive">
-              Web Designer / Digital Creative / Front-End Developer / Mobile Developer
+              Software Developer / Front-End Developer / Mobile Developer
             </p>
 
             <p className="text-sm sm:text-base mb-10 max-w-lg text-foreground/70 leading-relaxed">
-              I build visually compelling, user-friendly digital experiences for
-              brands and businesses — every project shot, developed, and printed
-              with the same care as a roll of film.
+              I’m a Computer Science graduate who builds web and mobile
+              applications with React, TypeScript and modern development tools.
+              I like building products that are useful, simple to use, and
+              solve a real problem.
             </p>
 
-            {/* Spec strip */}
             <div className="flex mb-10 border-t border-border">
               {specs.map((spec, index) => (
                 <div
                   key={index}
-                  className={`flex-1 py-4 ${index !== 0 ? "border-l border-border pl-4 sm:pl-6" : "pr-4 sm:pr-6"}`}
+                  className={`flex-1 py-4 ${
+                    index !== 0
+                      ? "border-l border-border pl-4 sm:pl-6"
+                      : "pr-4 sm:pr-6"
+                  }`}
                 >
                   <div className="text-2xl sm:text-3xl font-display text-foreground mb-1">
                     {spec.value}
                   </div>
+
                   <div className="font-mono text-[10px] sm:text-[11px] text-olive uppercase tracking-wider leading-tight">
                     {spec.label}
                   </div>
@@ -85,12 +105,11 @@ const Header = () => {
               onClick={scrollToPortfolio}
               className="group inline-flex items-center gap-3 bg-foreground text-background px-6 py-4 w-fit font-mono text-xs uppercase tracking-widest hover:bg-signal transition-colors"
             >
-              View the Archive
+              View Selected Work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
-          {/* Framed profile shot */}
           <div className="flex flex-col items-center lg:items-end gap-3 order-1 lg:order-2 animate-fade-in">
             <div className="relative frame frame-corners text-signal w-full max-w-[320px] vignette">
               <img
@@ -98,13 +117,16 @@ const Header = () => {
                 alt="Uche Munachiso Oluwatimileyin"
                 className="w-full h-auto object-cover"
               />
+
               <span className="absolute top-3 left-3 font-mono text-[10px] text-background bg-foreground/80 px-2 py-1 uppercase tracking-widest">
-                N&deg; 01
+                Profile
               </span>
+
               <span className="absolute bottom-3 right-3 font-mono text-[10px] text-background bg-foreground/80 px-2 py-1 uppercase tracking-widest">
                 50mm — f/1.8
               </span>
             </div>
+
             <div className="sprocket-row w-full max-w-[320px]" />
           </div>
         </div>
