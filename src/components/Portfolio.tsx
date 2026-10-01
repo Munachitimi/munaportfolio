@@ -168,7 +168,7 @@ const Portfolio = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover"
                 />
               ) : (
                 <div
@@ -194,11 +194,11 @@ const Portfolio = () => {
 
             <div className="p-5">
               <div className="flex items-start justify-between gap-2 mb-2">
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-signal transition-colors">
+                <h3 className="text-lg font-semibold text-foreground">
                   {project.title}
                 </h3>
 
-                <div className="w-8 h-8 border border-border flex items-center justify-center group-hover:bg-foreground group-hover:text-background group-hover:border-foreground transition-all shrink-0">
+                <div className="w-8 h-8 border border-border flex items-center justify-center shrink-0">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
