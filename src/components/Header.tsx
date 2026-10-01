@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <header className="min-h-screen flex flex-col justify-center px-4 sm:px-8 bg-background text-foreground relative py-20">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex items-center justify-between mb-12 sm:mb-16 animate-fade-in">
+        <div className="flex items-center justify-between mb-12 sm:mb-16">
           <span className="font-mono text-[11px] sm:text-xs tracking-widest text-olive uppercase">
             Munachi · Portfolio
           </span>
@@ -58,7 +58,7 @@ const Header = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
-          <div className="flex flex-col text-left order-2 lg:order-1 animate-fade-in-up">
+          <div className="flex flex-col text-left order-2 lg:order-1">
             <span className="font-mono text-xs tracking-widest text-signal uppercase mb-3">
               Computer Science · Software Development
             </span>
@@ -110,24 +110,14 @@ const Header = () => {
             </button>
           </div>
 
-          <div className="flex flex-col items-center lg:items-end gap-3 order-1 lg:order-2 animate-fade-in">
-            <div className="relative frame frame-corners text-signal w-full max-w-[320px] vignette">
+          <div className="flex flex-col items-center lg:items-end order-1 lg:order-2">
+            <div className="relative frame w-full max-w-[320px]">
               <img
                 src={profileImage}
                 alt="Uche Munachiso Oluwatimileyin"
                 className="w-full h-auto object-cover"
               />
-
-              <span className="absolute top-3 left-3 font-mono text-[10px] text-background bg-foreground/80 px-2 py-1 uppercase tracking-widest">
-                Profile
-              </span>
-
-              <span className="absolute bottom-3 right-3 font-mono text-[10px] text-background bg-foreground/80 px-2 py-1 uppercase tracking-widest">
-                50mm — f/1.8
-              </span>
             </div>
-
-            <div className="sprocket-row w-full max-w-[320px]" />
           </div>
         </div>
       </div>
