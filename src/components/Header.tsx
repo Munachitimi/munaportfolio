@@ -38,11 +38,7 @@ const Header = () => {
   return (
     <header className="min-h-screen flex flex-col justify-center px-4 sm:px-8 bg-background text-foreground relative py-20">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex items-center justify-between mb-12 sm:mb-16">
-          <span className="font-mono text-[11px] sm:text-xs tracking-widest text-olive uppercase">
-            Munachi · Portfolio
-          </span>
-
+        <div className="flex items-center justify-end mb-12 sm:mb-16">
           <div className="flex gap-2">
             {socialLinks.map((social, index) => (
               <a
@@ -59,10 +55,6 @@ const Header = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
           <div className="flex flex-col text-left order-2 lg:order-1">
-            <span className="font-mono text-xs tracking-widest text-signal uppercase mb-3">
-              Computer Science · Software Development
-            </span>
-
             <h1 className="font-display uppercase text-4xl sm:text-6xl lg:text-7xl leading-[0.95] mb-6 text-foreground">
               Uche
               <br />
