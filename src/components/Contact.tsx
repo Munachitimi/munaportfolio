@@ -5,9 +5,6 @@ const Contact = () => {
   return (
     <section className="bg-film text-film-foreground py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <span className="font-mono text-xs uppercase tracking-widest text-signal">
-          Get in touch
-        </span>
 
         <h2 className="font-display uppercase text-3xl sm:text-5xl mt-3 mb-6">
           Let’s Work Together
