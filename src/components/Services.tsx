@@ -42,7 +42,7 @@ const Services = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="group flex items-center gap-4 sm:gap-6 py-5 hover:bg-secondary/50 transition-colors px-2 -mx-2"
+           className="flex items-center gap-4 sm:gap-6 py-5 px-2 -mx-2"
           >
             <span className="font-mono text-xs text-olive w-8 shrink-0">
               {(index + 1).toString().padStart(2, "0")}
