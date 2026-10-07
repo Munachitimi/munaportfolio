@@ -103,7 +103,7 @@ const Header = () => {
           </div>
 
           <div className="flex flex-col items-center lg:items-end order-1 lg:order-2">
-            <div className="relative frame w-full max-w-[320px]">
+           <div className="relative w-full max-w-[320px]">
               <img
                 src={profileImage}
                 alt="Uche Munachiso Oluwatimileyin"
