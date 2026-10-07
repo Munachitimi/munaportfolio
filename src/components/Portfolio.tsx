@@ -124,9 +124,6 @@ const Portfolio = () => {
     >
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-4 border-b border-border pb-6">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-signal">
-            Selected Work
-          </span>
 
           <h2 className="font-display uppercase text-3xl sm:text-4xl lg:text-5xl text-foreground mt-2">
             Projects
